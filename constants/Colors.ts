@@ -4,6 +4,8 @@ const tintColorDark = '#fff';
 export const Colors = {
   gray: 'gray',
   black: 'black',
+  white: 'white',
+  red: 'red'
 }
 
 export default {

@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderRadius: 15,
         marginHorizontal: 20,
+        backgroundColor: Colors.white,
         
         elevation: 3,
         shadowRadius: 2.22,
@@ -85,13 +86,15 @@ const styles = StyleSheet.create({
     footer: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginTop: 10
     },
 
     footer__status: {
         borderRadius: 15,
         paddingVertical: 5,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        backgroundColor: Colors.red
     },
 
     footer__statusText: {

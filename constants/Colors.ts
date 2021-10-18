@@ -1,6 +1,11 @@
 const tintColorLight = '#2f95dc';
 const tintColorDark = '#fff';
 
+export const Colors = {
+  gray: 'gray',
+  black: 'black',
+}
+
 export default {
   light: {
     text: '#000',

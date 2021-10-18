@@ -3,10 +3,13 @@ import React from 'react'
 import { Text } from '../Themed';
 import { TouchableOpacity, StyleSheet, View } from 'react-native';
 import { Colors } from '../../constants/Colors';
+import { useNavigation } from '@react-navigation/core';
 
 export const AnimalCard = () => {
+    const navigation = useNavigation();
+
     return (
-        <TouchableOpacity activeOpacity={1} style={styles.cardContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('Animal', {id: 2})} activeOpacity={1} style={styles.cardContainer}>
             <View style={styles.header}>
                 <View style={styles.informationContainer}>
                     <View style={styles.informationRow}>

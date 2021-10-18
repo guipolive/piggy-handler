@@ -6,7 +6,7 @@ import { Colors } from '../../constants/Colors';
 
 export const AnimalCard = () => {
     return (
-        <TouchableOpacity style={styles.cardContainer}>
+        <TouchableOpacity activeOpacity={1} style={styles.cardContainer}>
             <View style={styles.header}>
                 <View style={styles.informationContainer}>
                     <View style={styles.informationRow}>

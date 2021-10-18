@@ -32,8 +32,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
                 showsVerticalScrollIndicator={false}
                 // refreshControl={renderRefreshControl()}
                 // ListFooterComponent={renderFooterLoading()}
-                previewOpenValue={-50}
-                rightOpenValue={-340}
+                previewOpenValue={-25}
+                rightOpenValue={-280}
                 renderHiddenItem={item => (
                     <AnimalCardHiddenOptions />
                 )}

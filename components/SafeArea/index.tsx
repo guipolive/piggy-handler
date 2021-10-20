@@ -34,7 +34,8 @@ const SafeArea = (props: ISafeAreaProps): JSX.Element => {
         <Fragment>
             {Platform.select({
                 ios: safeAreaIOS(props),
-                android: props.useNativeSafeAreaForAndroid ? safeAreaIOS(props) : safeAreaAndroid(props)
+                android: props.useNativeSafeAreaForAndroid ? safeAreaIOS(props) : safeAreaAndroid(props),
+                web: safeAreaIOS(props)
             })}
         </Fragment>
     );

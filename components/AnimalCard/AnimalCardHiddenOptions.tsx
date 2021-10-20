@@ -3,7 +3,7 @@ import React from 'react'
 import { Text } from '../Themed';
 import { TouchableOpacity, StyleSheet, View, ImageRequireSource, Image } from 'react-native';
 import { Colors } from '../../constants/Colors';
-import Images from '../../constants/Images';
+import {Images} from '../../constants/Images';
 
 export const AnimalCardHiddenOptions = () => {
     const renderOption = (icon: ImageRequireSource, label: string, color: string, onPress: () => void) => {

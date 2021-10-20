@@ -35,9 +35,9 @@ interface CustomScreenProps {
     fullWidthButton?: IFullWidthButtonProps;
 }
 
-export const CustomScreen: React.FC<CustomScreenProps> = (props) => {
+export const PageContainer: React.FC<CustomScreenProps> = (props) => {
     return (
-        <ImageBackground source={Images.delete} style={styles.containerWrapper}>
+        <ImageBackground source={Images.background} style={styles.containerWrapper}>
             <SafeArea style={styles.containerWrapper}>
                 <View style={styles.header}>
                     <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', flexShrink: 1 }}>

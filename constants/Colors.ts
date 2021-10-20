@@ -5,7 +5,8 @@ export const Colors = {
   gray: 'gray',
   black: 'black',
   white: 'white',
-  red: 'red'
+  red: 'red',
+  blue: 'blue'
 }
 
 export default {

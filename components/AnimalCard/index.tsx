@@ -4,30 +4,41 @@ import { Text } from '../Themed';
 import { TouchableOpacity, StyleSheet, View } from 'react-native';
 import { Colors } from '../../constants/Colors';
 import { useNavigation } from '@react-navigation/core';
+import { E_AnimalStatus_Title, I_Animal, O_AnimalStatus_StatusColor, E_AnimalType } from '../../model/animal';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { FontAwesome5 } from '@expo/vector-icons'; 
 
-export const AnimalCard = () => {
+
+interface I_AnimalCardProps {
+    animal: I_Animal;
+}
+
+export const AnimalCard = ({ animal }: I_AnimalCardProps) => {
     const navigation = useNavigation();
 
     return (
-        <TouchableOpacity onPress={() => navigation.navigate('Animal', {id: 2})} activeOpacity={1} style={styles.cardContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('Animal', {id: animal.id})} activeOpacity={1} style={styles.cardContainer}>
             <View style={styles.header}>
                 <View style={styles.informationContainer}>
                     <View style={styles.informationRow}>
                         <View style={styles.informationRow__bullet}/>
-                        <Text style={styles.informationRow__text}>Ciclo completo</Text>
+                        <Text style={styles.informationRow__text}>{animal.tipoGranja.descricao}</Text>
                     </View>
                     <View style={styles.informationRow}>
                         <View style={styles.informationRow__bullet}/>
-                        <Text style={styles.informationRow__text}>Pocilga/NORTE</Text>
+                        <Text style={styles.informationRow__text}>{animal.localizacao}</Text>
                     </View>
                 </View>
-                <View style={styles.animalType}></View>
+                {animal.tipoAnimal === E_AnimalType.SWINE
+                    ? <MaterialCommunityIcons name="pig" size={24} color={Colors.pig_pink} />
+                    : <FontAwesome5 name="kiwi-bird" size={24} color={Colors.chicken_yellow} />
+                }
             </View>
             <View style={styles.footer}>
-                <View style={styles.footer__status}>
-                    <Text style={styles.footer__statusText}>Ativo</Text>
+                <View style={[styles.footer__status, {backgroundColor: O_AnimalStatus_StatusColor[animal.statusAnimal]}]}>
+                    <Text style={styles.footer__statusText}>{E_AnimalStatus_Title[animal.statusAnimal]}</Text>
                 </View>
-                <Text style={styles.footer__animalName}>SAX8694</Text>
+                <Text style={styles.footer__animalName}>{animal.nome}</Text>
             </View>
         </TouchableOpacity>
     )
@@ -79,13 +90,6 @@ const styles = StyleSheet.create({
         marginLeft: 5
     },
 
-    animalType: {
-        width: 30,
-        height: 30,
-        borderRadius: 50,
-        backgroundColor: Colors.gray
-    },
-
     footer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -97,7 +101,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         paddingVertical: 5,
         paddingHorizontal: 10,
-        backgroundColor: Colors.red
+        backgroundColor: Colors.gray
     },
 
     footer__statusText: {

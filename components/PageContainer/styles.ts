@@ -26,19 +26,10 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 15
     },
 
-    actionIcon: {
-        width: 27,
-        height: 27,
-        resizeMode: 'contain',
-        tintColor: Colors.white,
-    },
+    actionIcon: {},
     
     closeIcon: {
-        width: 15,
-        height: 15,
         marginRight: 15,
-        resizeMode: 'contain',
-        tintColor: Colors.white,
     },
     
     scrollContainer: {
@@ -53,28 +44,6 @@ export const styles = StyleSheet.create({
         paddingTop: 40,
         paddingHorizontal: 14,
         flexGrow: 1,
-    },
-    
-    fullWidthButton: {
-        paddingHorizontal: 14,
-        width: '100%',
-        height: 50,
-        backgroundColor: Colors.blue,
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-    },
-
-    fullWidthButton__text: {
-        fontSize: 14,
-        color: Colors.white
-    },
-
-    fullWidthButton__icon: {
-        width: 20,
-        height: 20,
-        resizeMode: 'contain'
     },
 });
 

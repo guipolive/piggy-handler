@@ -4,15 +4,20 @@ import { AnimalDetailedCard } from '../components/AnimalDetailedCard';
 import { ButtonCallModal } from '../components/ButtonCallModal';
 import { InputContainer } from '../components/InputContainer';
 import { PageContainer } from '../components/PageContainer';
+import Animals from '../assets/animals.json';
 
 import { Text, View } from "../components/Themed";
 import { RootStackScreenProps } from "../types";
+import { I_Animal } from '../model/animal';
 
 export function AnimalScreen({ navigation, route }: RootStackScreenProps<'Animal'>) {
+    const animals: I_Animal[] = Animals;
+    const animal: I_Animal = animals.find(animal => animal.id === route.params.id)!;
+
     return (
         <PageContainer 
             onBack={() => navigation.goBack()}
-            contentBeforeBody={<AnimalDetailedCard />}
+            contentBeforeBody={<AnimalDetailedCard animal={animal}/>}
         >
             <InputContainer 
                 icon={'align-justify'}

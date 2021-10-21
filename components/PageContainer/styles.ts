@@ -43,8 +43,8 @@ export const styles = StyleSheet.create({
     
     scrollContainer: {
         backgroundColor: Colors.white,
-        borderTopLeftRadius: 8,
-        borderTopRightRadius: 8,
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
         flexGrow: 1,
     },
     

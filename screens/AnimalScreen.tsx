@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet } from "react-native";
 import { AnimalDetailedCard } from '../components/AnimalDetailedCard';
+import { InputContainer } from '../components/InputContainer';
 import { PageContainer } from '../components/PageContainer';
 
 import { Text, View } from "../components/Themed";
@@ -12,7 +13,22 @@ export function AnimalScreen({ navigation, route }: RootStackScreenProps<'Animal
             onBack={() => navigation.goBack()}
             contentBeforeBody={<AnimalDetailedCard />}
         >
-            <Text>Animal Screen</Text>
+            <InputContainer 
+                icon={'align-justify'}
+                label={'Nome'}
+                placeholder={'Nome do animal'}
+            />
+            <InputContainer 
+                icon={'align-justify'}
+                label={'Nome'}
+                placeholder={'Nome do animal'}
+            />
+            <InputContainer 
+                icon={'align-justify'}
+                label={'Nome'}
+                placeholder={'Nome do animal'}
+                disabled
+            />
         </PageContainer>
     );
 }

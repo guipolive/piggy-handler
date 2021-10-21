@@ -1,3 +1,5 @@
+import { Colors } from "../constants/Colors";
+
 export interface I_Animal {
     id: string;
     nome: string;
@@ -29,6 +31,13 @@ export enum E_AnimalStatus {
     INACTIVE = 1,
     SOLD = 2,
     DISPOSED = 3
+}
+
+export const O_AnimalStatus_StatusColor = {
+    0: Colors.green,
+    1: Colors.gray,
+    2: Colors.yellow,
+    3: Colors.red
 }
 
 export enum E_AnimalStatus_Title {

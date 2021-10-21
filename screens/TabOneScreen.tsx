@@ -2,15 +2,18 @@ import React from 'react'
 import { StyleSheet } from "react-native";
 
 import { Text, View } from "../components/Themed";
+import Animals from '../assets/animals.json';
 import {View as AnimatableView} from 'react-native-animatable';
 import { SwipeListView, SwipeRow } from 'react-native-swipe-list-view';
 import { RootTabScreenProps } from "../types";
 import { AnimalCard } from "../components/AnimalCard";
 import { AnimalCardHiddenOptions } from '../components/AnimalCard/AnimalCardHiddenOptions';
-
-const teste = [0, 1, 2]
+import { I_Animal } from '../model/animal';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+
+    const animals: I_Animal[] = Animals;
+
     return (
         <AnimatableView
             duration={500}
@@ -19,7 +22,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
             style={styles.container}
         >
             <SwipeListView
-                data={teste}
+                data={animals}
                 disableRightSwipe
                 // onScroll={onScroll}
                 previewRowKey={"0"}
@@ -37,8 +40,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
                 renderHiddenItem={item => (
                     <AnimalCardHiddenOptions />
                 )}
-                renderItem={(item) => (
-                    <AnimalCard />
+                renderItem={({item: animal}) => (
+                    <AnimalCard animal={animal} />
                 )}
             />
         </AnimatableView>

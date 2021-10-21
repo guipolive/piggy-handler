@@ -9,42 +9,51 @@ import { RootTabScreenProps } from "../types";
 import { AnimalCard } from "../components/AnimalCard";
 import { AnimalCardHiddenOptions } from '../components/AnimalCard/AnimalCardHiddenOptions';
 import { I_Animal } from '../model/animal';
+import SafeArea from '../components/SafeArea';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
 
     const animals: I_Animal[] = Animals;
 
     return (
-        <AnimatableView
-            duration={500}
-            useNativeDriver
-            animation={"fadeInUpBig"}
-            style={styles.container}
+        <SafeArea style={{
+            width: '100%',
+            flex: 1,
+            height: '100%',
+            position: 'relative',
+            backgroundColor: 'transparent',}}
         >
-            <SwipeListView
-                data={animals}
-                disableRightSwipe
-                // onScroll={onScroll}
-                previewRowKey={"0"}
-                previewOpenDelay={3000}
-                scrollEventThrottle={16}
-                // refreshing={isRefreshing}
-                style={styles.listContainer}
-                // onScrollEndDrag={handleSnap}
-                // ref={(ref) => ($flatListRef = ref)}
-                showsVerticalScrollIndicator={false}
-                // refreshControl={renderRefreshControl()}
-                // ListFooterComponent={renderFooterLoading()}
-                previewOpenValue={-25}
-                rightOpenValue={-280}
-                renderHiddenItem={item => (
-                    <AnimalCardHiddenOptions />
-                )}
-                renderItem={({item: animal}) => (
-                    <AnimalCard animal={animal} />
-                )}
-            />
-        </AnimatableView>
+            <AnimatableView
+                duration={500}
+                useNativeDriver
+                animation={"fadeInUpBig"}
+                style={styles.container}
+            >
+                <SwipeListView
+                    data={animals}
+                    disableRightSwipe
+                    // onScroll={onScroll}
+                    previewRowKey={"0"}
+                    previewOpenDelay={3000}
+                    scrollEventThrottle={16}
+                    // refreshing={isRefreshing}
+                    style={styles.listContainer}
+                    // onScrollEndDrag={handleSnap}
+                    // ref={(ref) => ($flatListRef = ref)}
+                    showsVerticalScrollIndicator={false}
+                    // refreshControl={renderRefreshControl()}
+                    // ListFooterComponent={renderFooterLoading()}
+                    previewOpenValue={-25}
+                    rightOpenValue={-280}
+                    renderHiddenItem={item => (
+                        <AnimalCardHiddenOptions />
+                    )}
+                    renderItem={({item: animal}) => (
+                        <AnimalCard animal={animal} />
+                    )}
+                />
+            </AnimatableView>
+        </SafeArea>
     );
 }
 

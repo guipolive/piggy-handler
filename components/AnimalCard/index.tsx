@@ -32,6 +32,7 @@ export const AnimalCard = ({ animal }: I_AnimalCardProps) => {
                 {animal.tipoAnimal === E_AnimalType.SWINE
                     ? <MaterialCommunityIcons name="pig" size={24} color={Colors.pig_pink} />
                     : <FontAwesome5 name="kiwi-bird" size={24} color={Colors.chicken_yellow} />
+                    // TODO: Alterar para componente
                 }
             </View>
             <View style={styles.footer}>

@@ -6,7 +6,11 @@ export const Colors = {
   black: 'black',
   white: 'white',
   red: 'red',
-  blue: 'blue'
+  blue: 'blue',
+  pig_pink: 'pink',
+  green: 'green',
+  yellow: 'yellow',
+  chicken_yellow: 'yellow'
 }
 
 export default {

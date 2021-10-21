@@ -19,7 +19,7 @@ export const DetailRow = (props: IDetailRowProps) => {
             <Feather name={props.icon} size={24} color="black" />
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{props.title}</Text>
-                <Text style={styles.description}>{props.title}</Text>
+                <Text style={styles.description}>{props.description}</Text>
             </View>
         </View>
     )

@@ -21,6 +21,11 @@ export const styles = StyleSheet.create({
         flexBasis: 55,
     },
 
+    contentBeforeBodyWrapper: {
+        paddingVertical: 30,
+        paddingHorizontal: 15
+    },
+
     actionIcon: {
         width: 27,
         height: 27,

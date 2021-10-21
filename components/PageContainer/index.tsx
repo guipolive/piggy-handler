@@ -33,9 +33,18 @@ interface CustomScreenProps {
     onActionTitleIsLoading?: string;
     isLoading?: boolean;
     fullWidthButton?: IFullWidthButtonProps;
+    contentBeforeBody?: any; /* TODO: Adicionar tipagem */
 }
 
 export const PageContainer: React.FC<CustomScreenProps> = (props) => {
+    const renderContentBeforeBody = () => {
+        return (
+            <View style={styles.contentBeforeBodyWrapper}>
+                {props.contentBeforeBody}
+            </View>
+        )
+    }
+
     return (
         <ImageBackground source={Images.background} style={styles.containerWrapper}>
             <SafeArea style={styles.containerWrapper}>
@@ -69,30 +78,12 @@ export const PageContainer: React.FC<CustomScreenProps> = (props) => {
                     </TouchableOpacity>
                 </View>
 
+                {props.contentBeforeBody && renderContentBeforeBody()}
+
                 <ScrollView contentContainerStyle={styles.scrollContainer}>
                     <View style={styles.content} >
                         {props.children}
                     </View>
-                    {props.fullWidthButton && !props.fullWidthButton.isInvisible &&
-                    
-                        <TouchableOpacity 
-                            style={[
-                                styles.fullWidthButton,
-                                {
-                                    backgroundColor: props.fullWidthButton.backgroundColor,
-                                    justifyContent: props.fullWidthButton.type ?? 'space-between'
-                                }
-                            ]}
-                            onPress={props.fullWidthButton.action}
-                        >
-                            <Text style={styles.fullWidthButton__text} >{props.fullWidthButton.title}</Text>
-
-                            {props.fullWidthButton.icon && 
-                            <Image style={styles.fullWidthButton__icon} source={props.fullWidthButton.icon} />
-                            }
-
-                        </TouchableOpacity>
-                    }
                 </ScrollView>
 
             </SafeArea>
